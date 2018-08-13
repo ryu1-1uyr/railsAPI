@@ -8,3 +8,19 @@
   <input type="submit" value="post投稿">
 
 <% end %>
+
+<p>put</p>
+<%= form_tag("/", :method => :put) do %>
+  <textarea name="content"></textarea>
+  id:<textarea name="id"></textarea>
+  <input type="submit" value="put投稿">
+
+<% end %>
+
+<p>delete</p>
+<%= form_tag("/") do %>
+  <textarea name="content"></textarea>
+  <input type="submit" value="post投稿">
+
+<% end %>
+

@@ -14,7 +14,10 @@ class HomeController < ApplicationController
   end
 
   def put
-
+    @post = Post.find_by(id: params[:id])
+    @post.content = params[:content]
+    @post.save
+    redirect_to("/top")
   end
 
   def delete
