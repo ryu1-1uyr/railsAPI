@@ -1,0 +1,13 @@
+<h1>Testpage</h1>
+<p>view DB page</p>
+
+<%= link_to("index","/index") %><br>
+
+<% @post.each do |pos|  %>
+
+  <%= pos.updated_at %>
+  <%= pos.created_at %>
+  <%= pos.content %>
+  <br>
+
+<% end %>

@@ -1,0 +1,10 @@
+<h1>indexpage</h1>
+<p>Find me in app/views/home/top.html.erb</p>
+<%= link_to("top","/top") %>
+<br>
+<p>form</p>
+<%= form_tag("/") do %>
+  <textarea name="content"></textarea>
+  <input type="submit" value="post投稿">
+
+<% end %>
