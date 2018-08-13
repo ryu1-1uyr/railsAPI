@@ -18,9 +18,9 @@
 <% end %>
 
 <p>delete</p>
-<%= form_tag("/") do %>
-  <textarea name="content"></textarea>
-  <input type="submit" value="post投稿">
+<%= form_tag("/", :method => :delete) do %>
+  id:<textarea name="id"></textarea>
+  <input type="submit" value="dalete投稿">
 
 <% end %>
 

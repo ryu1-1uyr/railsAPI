@@ -21,7 +21,10 @@ class HomeController < ApplicationController
   end
 
   def delete
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
 
+    redirect_to("/top")
   end
 
   def view
