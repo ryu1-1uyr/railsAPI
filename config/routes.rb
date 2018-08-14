@@ -1,12 +1,23 @@
 Rails.application.routes.draw do
 
 
+  #先行課題1 商品データを持つRESTFulAPI
+  get '/management/items' => "items#get"
+  post '/management/items' => "items#post"
+  put '/management/items' => "items#put"
+  delete '/management/items' => "items#delete"
 
-  get 'receipts/get'
-  get 'shops/get'
-  get 'items/get'
+  #店舗系のAPI
+  get '/management/shops' => "shops#get"
+  post '/management/shops' => "shops#post"
+  put '/management/shops' => "shops#put"
+  delete '/management/shops' => "shops#delete"
 
-
+  #店舗が有するデータのAPI
+  get '/management/receipts' => "receipts#get"
+  post '/management/receipts' => "receipts#post"
+  put '/management/receipts' => "receipts#put"
+  delete '/management/receipts' => "receipts#delete"
 
 
   get 'home/top'
