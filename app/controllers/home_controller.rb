@@ -27,9 +27,6 @@ class HomeController < ApplicationController
     redirect_to("/top")
   end
 
-  def view
-
-  end
 
   def top
     @post = Post.all
