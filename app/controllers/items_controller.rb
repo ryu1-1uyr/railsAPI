@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
 
   def get
+    @items = Product.all
 
+    render :json => @items
   end
 
   def post
