@@ -6,3 +6,5 @@
 * READMEちゃんと書き直す
 * nginxとの連携まわりの理解
 * laaS Paas周りの知識 => からの公開
+
+* mysql <=> rails繋ぐのにだいぶ苦労してるつらい
