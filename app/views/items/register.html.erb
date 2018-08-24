@@ -1,0 +1,29 @@
+<h1>商品情報を送信するページ</h1>
+<%= link_to("top","/management/items") %>
+<br>
+<p>form</p>
+<%= form_tag("/management/items") do %>
+  name:<textarea name="name"></textarea>
+  description:<textarea name="description"></textarea>
+  price:<textarea name="price"></textarea>
+  <input type="submit" value="post投稿">
+
+<% end %>
+
+<p>put</p>
+<%= form_tag("/management/items", :method => :put) do %>
+  id:<textarea name="id"></textarea>
+  name:<textarea name="name"></textarea>
+  description:<textarea name="description"></textarea>
+  price:<textarea name="price"></textarea>
+  <input type="submit" value="put投稿">
+
+<% end %>
+
+<p>delete</p>
+<%= form_tag("/management/items", :method => :delete) do %>
+  id:<textarea name="id"></textarea>
+  <input type="submit" value="dalete投稿">
+
+<% end %>
+
