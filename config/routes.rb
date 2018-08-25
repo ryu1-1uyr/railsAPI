@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   post '/management/shops' => "shops#post"
 
   post '/management/login' => "shops#login"
-  post '/management/register' => "shops#register"
-
   get '/management/login' => "shops#login"
+
+  post '/management/register' => "shops#register"
 
   get '/management' => "shops#index"
 
