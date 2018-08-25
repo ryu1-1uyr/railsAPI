@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   post '/management/register' => "shops#register"
 
+  get 'management/logout' => "shops#logout"
+
   get '/management' => "shops#index"
 
   #店舗が有するデータのAPI

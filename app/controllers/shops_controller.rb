@@ -2,6 +2,10 @@ class ShopsController < ApplicationController
 
   def get
 
+    if session[:user_name]
+      @notice = "#{session[:user_name]}でログインしています。"
+    end
+
   end
 
   def post
@@ -39,6 +43,11 @@ class ShopsController < ApplicationController
 
     end
 
+  end
+
+  def logout
+    session[:user_name] = nil #logout これでいいのかしら
+    redirect_to("/management")
   end
 
 end
