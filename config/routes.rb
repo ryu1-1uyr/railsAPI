@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  # 商品データを持つRESTFulAPI
+  #課題1 商品データを持つRESTFulAPI
   get '/management/items' => "items#get"
   post '/management/items' => "items#post"
   put '/management/items' => "items#put"
@@ -12,8 +12,11 @@ Rails.application.routes.draw do
   #店舗系のAPI
   get '/management/shops' => "shops#get"
   post '/management/shops' => "shops#post"
-  put '/management/shops' => "shops#put"
-  delete '/management/shops' => "shops#delete"
+
+  post '/management/login' => "shops#post"
+  post '/management/register' => "shops#post"
+
+  get '/management' => "shops#index"
 
   #店舗が有するデータのAPI
   get '/management/receipts' => "receipts#get"

@@ -1,0 +1,19 @@
+<h1>shops index</h1>
+<p>login form </p>
+<br>
+
+<p>login</p>
+<%= form_tag("/management/login") do %>
+  name:<textarea name="name"></textarea>
+  pwd:<input type="password" name="pwd">
+  addles:<textarea name="addles"></textarea>
+  <input type="submit" value="post投稿">
+<% end %>
+
+<p>register</p>
+<%= form_tag("/management/register") do %>
+  name:<textarea name="name"></textarea>
+  pwd:<input type="password" name="pwd">
+  addles:<textarea name="addles"></textarea>
+  <input type="submit" value="post投稿">
+<% end %>

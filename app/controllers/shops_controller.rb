@@ -6,13 +6,16 @@ class ShopsController < ApplicationController
 
   def post
 
-  end
-
-  def put
+    redirect_to("/management/shops")
 
   end
 
-  def delete
+  def login
+
+  end
+
+  def register
+    @registeringData
 
   end
 
