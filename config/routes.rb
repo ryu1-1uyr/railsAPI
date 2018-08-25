@@ -13,8 +13,10 @@ Rails.application.routes.draw do
   get '/management/shops' => "shops#get"
   post '/management/shops' => "shops#post"
 
-  post '/management/login' => "shops#post"
-  post '/management/register' => "shops#post"
+  post '/management/login' => "shops#login"
+  post '/management/register' => "shops#register"
+
+  get '/management/login' => "shops#login"
 
   get '/management' => "shops#index"
 

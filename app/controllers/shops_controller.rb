@@ -15,8 +15,10 @@ class ShopsController < ApplicationController
   end
 
   def register
-    @registeringData
+    @registeringData = Store.new(name: params[:name] , pwd: params[:pwd] , addles: params[:addles])
+    @registeringData.save
 
+    redirect_to("/management/login")
   end
 
 end
