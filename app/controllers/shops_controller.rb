@@ -2,6 +2,9 @@ class ShopsController < ApplicationController
 
   def get
 
+    @items = Product.all
+    @receipt = Receipt.where(storeId: session[:id])
+
     if session[:user_name]
       @notice = "#{session[:user_name]}でログインしています。"
     end
@@ -16,13 +19,14 @@ class ShopsController < ApplicationController
 
   def login
 
-    if params[:name].empty? && params[:pwd].empty? then #この実装はいいんだろうか...
+    if params[:name].nil? && params[:pwd].nil? then #この実装はいいんだろうか...
 
     else
       if Store.find_by(name: params[:name],pwd: params[:pwd]).nil? then
         #login sippai
       else
         session[:user_name] = params[:name]
+        session[:id] = Store.find_by(name: params[:name],pwd: params[:pwd]).id
         redirect_to("/management/shops")
       end
     end
@@ -50,4 +54,15 @@ class ShopsController < ApplicationController
     redirect_to("/management")
   end
 
+  def entry
+    @receipt = Receipt.new(productsId: params[:id],storeId: session[:id], howManyHave: params[:stock])
+    @receipt.save
+    redirect_to("/management/shops")
+  end
+
+  def remove
+    @receipt = Receipt.find_by(id: params[:id])
+    @receipt.destroy
+    redirect_to("/management/shops")
+  end
 end

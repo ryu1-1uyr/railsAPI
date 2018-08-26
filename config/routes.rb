@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :accounts
   #課題1 商品データを持つRESTFulAPI
   get '/management/items' => "items#get"
   post '/management/items' => "items#post"
@@ -21,6 +22,9 @@ Rails.application.routes.draw do
   get 'management/logout' => "shops#logout"
 
   get '/management' => "shops#index"
+
+  post '/management/shop/append/:id' => "shops#entry"
+  post '/management/shop/remove/:id' => "shops#remove"
 
   #店舗が有するデータのAPI
   get '/management/receipts' => "receipts#get"

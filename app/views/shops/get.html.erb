@@ -1,7 +1,27 @@
-<h1>Shops#get</h1>
-<o>こっち？</o>
+<h1>在庫管理</h1>
 
 <br>
 <%= @notice %>
 <br>
 <p><%= link_to("logout","/management/logout") %></p>
+
+<% @receipt.each do |stock| %>
+
+  <p><%=stock.id %>: <%= stock.productsId %>,<%= stock.howManyHave %>個</p>
+  <%= link_to("削除","/management/shop/remove/#{stock.id}",{method:"post"}) %>
+
+<% end %>
+
+<br>
+<% @items.each do |item| %>
+  <br>
+  <p><%= item.id %>,<%= item.name %> </p>
+  <%= form_tag("/management/shop/append/#{item.id}") do %>
+
+  <input type="number" name="stock">
+    <input type="submit" value="追加">
+
+  <%end %>
+
+  <br>
+<%end%>
