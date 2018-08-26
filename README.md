@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* /management/items/show,/management/items/registerで商品の閲覧と登録ができる
 
-Things you may want to cover:
+* /management は店舗のログイン、登録を想定している
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+店舗別の在庫管理くらいまではできた。CSS,JSまだつけてないので追加したい

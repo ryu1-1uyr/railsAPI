@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
     @items = Product.new(name: params[:name], description: params[:description]  ,price: params[:price])
     @items.save
 
-    redirect_to("/management/items")
+    redirect_to("/management/items/show")
 
   end
 
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
 
     @items.save
 
-    redirect_to("/management/items")
+    redirect_to("/management/items/show")
 
   end
 
@@ -34,12 +34,16 @@ class ItemsController < ApplicationController
     @items = Product.find_by(id: params[:id])
     @items.destroy
 
-    redirect_to("/management/items")
+    redirect_to("/management/items/show")
 
   end
 
   def register
 
+  end
+
+  def show
+    @items = Product.all
   end
 
 end

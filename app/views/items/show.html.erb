@@ -1,0 +1,9 @@
+<h1>商品一覧</h1>
+<%= link_to("商品登録","/management/items/register") %>
+<%= link_to("店舗ログイン,登録","/management") %>
+
+<% @items.each do |item| %>
+
+  <p><%= item.id%> , <%=item.name%> , <%=item.description %> , <%= item.price %>円</p>
+
+<% end %>
